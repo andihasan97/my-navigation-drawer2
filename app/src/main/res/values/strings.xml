@@ -20,4 +20,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="this_is_cart">This is Cart Fragment</string>
+    <string name="this_is_subway_ac">This is subway activity</string>
 </resources>
