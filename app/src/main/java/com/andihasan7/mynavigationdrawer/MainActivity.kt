@@ -12,11 +12,16 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.andihasan7.mynavigationdrawer.databinding.ActivityMainBinding
+import com.bumptech.glide.Glide
+import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var profileCircleImageView: CircleImageView
+    private var profileImageUrl1 = "https://wallpapercave.com/wp/wp2362391.jpg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        // penyesuaian circleImageView
+        profileCircleImageView = navView.getHeaderView(0).findViewById(R.id.imageview)
+        Glide.with(this)
+            .load(profileImageUrl1)
+            .into(profileCircleImageView)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
